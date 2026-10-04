@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ironman Knokke-Heist: 48-week plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..850&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EDF2F1;--panel:#F8FBFA;--ink:#13242B;--muted:#55666C;--rule:#CBD8D7;--rs:#9DB0B0;--swim:#1B6C8A;--bike:#C08A12;--run:#BF3A2C;--lift:#6E797E;--rest:#A3B0B2;--race:#13242B;--b1:#DCE6E5;--b2:#E7EEED;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0D181C;--panel:#13232A;--ink:#E2EBEA;--muted:#97A9AD;--rule:#23373E;--rs:#3B5660;--swim:#58AACA;--bike:#E2B045;--run:#EA6553;--lift:#9AA6AB;--rest:#5D6E73;--race:#E2EBEA;--b1:#16282F;--b2:#1B2F37;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0D181C;--panel:#13232A;--ink:#E2EBEA;--muted:#97A9AD;--rule:#23373E;--rs:#3B5660;--swim:#58AACA;--bike:#E2B045;--run:#EA6553;--lift:#9AA6AB;--rest:#5D6E73;--race:#E2EBEA;--b1:#16282F;--b2:#1B2F37;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--swim);outline-offset:2px}[hidden]{display:none!important}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.masthead{padding:28px 0 0;border-bottom:1px solid var(--rule)}
+.tr{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px}
+h1{margin:0;font-stretch:125%;font-weight:820;font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.025em}
+.rm{margin:0;color:var(--muted);max-width:36ch}.rm strong{color:var(--ink)}
+.cd{margin:14px 0 0;font-weight:600}
+.tabs{display:flex;gap:2px;margin-top:18px;overflow-x:auto;scrollbar-width:none}
+.tab{border:0;background:none;font:inherit;font-weight:620;padding:10px 14px 11px;color:var(--muted);border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.profile{margin:26px 0 6px}.ph{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-bottom:8px}
+.ph h2{margin:0;font-size:1.05rem}.lg{display:flex;gap:14px;font-size:.85rem;color:var(--muted)}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.ps{overflow-x:auto}.ps svg{display:block;width:100%;min-width:700px;height:auto}
+.hit{fill:transparent;cursor:pointer}.hit:hover{fill:var(--ink);fill-opacity:.05}.hit.sel{fill:var(--ink);fill-opacity:.08;stroke:var(--ink);stroke-width:1.5}
+.weeknav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.btn{font:inherit;font-weight:620;font-size:.95rem;border:1px solid var(--rs);background:var(--panel);color:var(--ink);border-radius:6px;padding:8px 12px;cursor:pointer;min-height:40px}
+.btn:hover{border-color:var(--ink)}.btn.q{background:none;border-color:transparent;color:var(--muted)}
+select,input{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--rs);border-radius:6px;padding:8px 10px;min-height:40px}
+.wh{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 28px;border-top:2px solid var(--ink);padding-top:14px}
+.wh h2{margin:0;font-stretch:118%;font-weight:780;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.1}
+.dates{color:var(--muted);font-weight:500;font-stretch:100%;font-size:1rem;margin-left:6px}
+.pl{margin:4px 0 0;font-weight:600}.pill{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:999px;border:1px solid var(--rs);font-size:.82rem;vertical-align:2px}
+.tot{display:grid;grid-template-columns:repeat(4,auto);gap:2px 20px;text-align:right}
+.tot .l{color:var(--muted);font-size:.8rem}.tot .v{font-weight:700;font-stretch:112%;font-size:1.15rem}
+.tot .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;background:var(--c)}
+.why{grid-column:1/-1;max-width:78ch;color:var(--muted);margin:6px 0 0}
+.wn{grid-column:1/-1;max-width:78ch;margin:4px 0 0;padding:10px 14px;border-left:3px solid var(--run);background:var(--panel)}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:18px}
+.db{text-align:left;background:var(--panel);border:1px solid var(--rule);border-radius:8px 8px 0 0;border-bottom-width:3px;padding:10px;cursor:pointer;font:inherit;color:inherit;min-height:120px;display:flex;flex-direction:column;gap:6px}
+.db[aria-selected="true"]{border-color:var(--ink)}.db .dn{font-weight:720}.db .dd{color:var(--muted);font-size:.82rem}.db .tt{color:var(--run);font-size:.72rem;font-weight:700}
+.mini{display:flex;flex-direction:column;gap:3px}.mini span{display:block;height:7px;border-radius:2px;background:var(--c);min-width:6px}
+.db .dt{margin-top:auto;font-size:.82rem;color:var(--muted)}.db .dt b{color:var(--ink)}
+.dd2{background:var(--panel);border:1px solid var(--ink);border-top-width:0;padding:14px 18px 20px;margin-bottom:36px}
+.dh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}.dh h3{margin:0;font-size:1.25rem;font-stretch:110%}.sum{color:var(--muted);font-size:.92rem;margin:2px 0 0}
+.sess{--c:var(--muted);border-left:4px solid var(--c);background:var(--paper);margin:12px 0 0;border-radius:0 6px 6px 0}
+.sport-swim{--c:var(--swim)}.sport-bike{--c:var(--bike)}.sport-run{--c:var(--run)}.sport-lift{--c:var(--lift)}.sport-race{--c:var(--race)}
+.sh{display:flex}.sc{display:flex;align-items:center;padding:0 4px 0 12px}.sc input{width:20px;height:20px;min-height:0;accent-color:var(--ink);margin:0}
+.st{flex:1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 14px;text-align:left;background:none;border:0;font:inherit;color:inherit;padding:12px 14px 12px 8px;cursor:pointer}
+.stt{font-weight:700;font-size:1.04rem}.sm{color:var(--muted);font-size:.86rem;margin-top:3px}.sd{font-weight:720;font-stretch:115%;font-size:1.15rem;white-space:nowrap}
+.sess.done .stt{text-decoration:line-through;color:var(--muted)}
+.sb{padding:2px 18px 18px 16px;border-top:1px solid var(--rule)}.sb .pu{max-width:76ch;margin:12px 0 10px}
+.steps{display:grid;grid-template-columns:7.5rem minmax(0,1fr) minmax(10rem,15rem);border-top:1px solid var(--rule);font-size:.94rem}
+.steps>div{padding:9px 10px 9px 0;border-bottom:1px solid var(--rule)}.steps .h{font-size:.8rem;font-weight:650;color:var(--muted)}.steps .p{font-weight:650}
+.tz{font-weight:600;font-size:.86rem}.tv{font-weight:700}
+.notes{margin:12px 0 0;padding-left:1.1rem;color:var(--muted);font-size:.92rem}
+.page{padding:30px 0 60px}.page h2{font-stretch:118%;font-weight:780;font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 6px}.page h3{margin:30px 0 6px;font-size:1.15rem}
+.page p,.page li{max-width:74ch}.lede{color:var(--muted);font-size:1.05rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px 36px}.field{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}.field label{font-weight:650}.hint{color:var(--muted);font-size:.85rem}
+table.z{border-collapse:collapse;width:100%;font-size:.92rem}table.z th,table.z td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--rule)}table.z th{font-size:.8rem;color:var(--muted)}.tw{overflow-x:auto}
+.budget{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px solid var(--ink)}.budget div{padding:10px 10px 12px 0;border-bottom:1px solid var(--rule)}.budget .l{font-size:.85rem;color:var(--muted)}.budget .v{font-stretch:118%;font-weight:780;font-size:1.5rem}.budget .s{font-size:.82rem;color:var(--muted)}
+.callout{border-left:3px solid var(--run);background:var(--panel);padding:12px 16px;max-width:78ch}
+@media(max-width:820px){.wh{grid-template-columns:1fr}.tot{text-align:left;justify-content:start}.steps{grid-template-columns:6rem minmax(0,1fr)}.steps .tg{grid-column:2;padding-top:0}.steps .h.tg{display:none}}
+@media(max-width:760px){.days{grid-template-columns:repeat(7,92px);overflow-x:auto}.budget{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.steps .h{display:none}}
+</style></head><body>
+<header class="masthead"><div class="wrap">
+<div class="tr"><h1>Ironman Knokke-Heist</h1><p class="rm"><strong>Sunday 5 September 2027.</strong> Goal: under 15 hours. 48 weeks, up to 14 hours of swim, bike and run a week, plus three lifting slots.</p></div>
+<p class="cd" id="cd"></p>
+<nav class="tabs" role="tablist"><button class="tab" role="tab" data-t="plan" aria-selected="true">Plan</button><button class="tab" role="tab" data-t="num" aria-selected="false">Your numbers</button><button class="tab" role="tab" data-t="race" aria-selected="false">Race day</button><button class="tab" role="tab" data-t="meth" aria-selected="false">Method</button></nav>
+</div></header>
+<main class="wrap">
+<section id="v-plan">
+<div class="profile"><div class="ph"><h2>The season: weekly hours by sport. Click a week to open it.</h2><div class="lg"><span><i style="background:var(--swim)"></i>Swim</span><span><i style="background:var(--bike)"></i>Bike</span><span><i style="background:var(--run)"></i>Run</span></div></div><div class="ps"><svg id="prof" viewBox="0 0 960 222" role="img" aria-label="Weekly training hours"></svg></div></div>
+<div class="weeknav"><button class="btn" id="pw">Prev week</button><select id="ws" aria-label="Choose week"></select><button class="btn" id="nw">Next week</button><button class="btn q" id="tb">Go to today</button></div>
+<div class="wh" id="wh"></div><div class="days" id="days"></div>
+<div class="dd2"><div class="dh"><div><h3 id="dt"></h3><p class="sum" id="ds"></p></div><div><button class="btn" id="pd">Prev day</button> <button class="btn" id="nd">Next day</button> <button class="btn q" id="ea">Expand all</button></div></div><div id="ss"></div></div>
+</section>
+<section id="v-num" class="page" hidden><h2>Your numbers</h2><p class="lede">Enter your test results and every session shows real watts and paces instead of percentages. They are saved in this browser.</p>
+<div class="cols"><div><div class="field"><label for="ftp">FTP (watts)</label><input id="ftp" type="number" inputmode="numeric" placeholder="e.g. 230"></div><div class="field"><label for="tp">Run threshold pace (min:sec per km)</label><input id="tp" placeholder="e.g. 4:35"><span class="hint">About the pace you could race for one hour.</span></div><div class="field"><label for="css">Swim CSS (min:sec per 100 m)</label><input id="css" placeholder="e.g. 2:05"><span class="hint">(400 m time − 200 m time) ÷ 2.</span></div></div>
+<div><h3 style="margin-top:0">Your zones</h3><div class="tw"><table class="z" id="zt"></table></div></div></div></section>
+<section id="v-race" class="page" hidden><h2>Race day</h2><p class="lede">An example sub-15 budget. Adjust it once your tests show where you really are.</p>
+<div class="budget"><div><div class="l">Swim 3.8 km</div><div class="v">1:25</div><div class="s">about 2:14 per 100 m</div></div><div><div class="l">T1</div><div class="v">0:08</div></div><div><div class="l">Bike 180 km</div><div class="v">6:40</div><div class="s">about 27 km/h</div></div><div><div class="l">T2</div><div class="v">0:07</div></div><div><div class="l">Run 42.2 km</div><div class="v">6:15</div><div class="s">about 8:53 per km</div></div></div>
+<p>That adds up to 14:35, leaving about 25 minutes for aid stations, a toilet stop or a bad patch.</p>
+<h3>Pacing and fuelling</h3><ul><li>Bike at Ironman power from the first hour and never above it. The first 20 minutes stay below it while your heart rate settles.</li><li>Run the first 5 km at the slow end of the range even though it feels too easy.</li><li>Carbohydrate 80–90 g per hour on the bike from 10 minutes in, then 50–70 g per hour on the run. Use the products you train with.</li></ul>
+<h3>Taper</h3><p>Week 46 drops to about three quarters of peak volume, week 47 to about half, and race week to about a third. Short race-pace pieces stay in.</p>
+<h3>London Olympic-distance race</h3><div class="callout"><p style="margin-top:0">Not in the plan yet. It would fall in weeks 43–45 (26 July to 15 August). Send me the date and I'll rework the weeks around it, with a few lighter days before and easy days after.</p></div></section>
+<section id="v-meth" class="page" hidden><h2>Method</h2><p class="lede">Built from general principles associated with these coaches, not from their published plans.</p>
+<ul><li><strong>Dan Lorang:</strong> repeating cycles of skill and VO2max, then strength-endurance, then race-pace work. Slow, consistent progression.</li><li><strong>Dan Plews:</strong> mostly easy work early, more time between the thresholds as the race nears (polarised to pyramidal). Low-cadence strength intervals. Readiness check by heart-rate variability.</li><li><strong>Lance Watson:</strong> long rides finishing with race-pace bricks, race fuelling practised on every long day, and never racing harder than you trained.</li><li><strong>Blummenfelt and Bu:</strong> lots of easy volume plus controlled sub-threshold intervals with short rests, using power and pace ceilings in place of lactate testing.</li></ul>
+<h3>Readiness rule</h3><p>If your HRV is below your normal range for two days and you feel flat, swap that day's key session for easy endurance at the same length. Don't make it up later.</p>
+<h3>Recovery and benchmarks</h3><p>Every 4th week up to week 42 is a recovery week with about 30% less volume and no intervals. Re-test FTP, run threshold and swim CSS in those weeks, then update the Your numbers tab.</p></section>
+</main>
+<script>
+"use strict";
+const START=[2026,9,5],dateOf=(w,d)=>new Date(START[0],START[1],START[2]+(w-1)*7+d),DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const fd=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'short'}),fdl=d=>d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+const fmt=m=>m?(m<60?m+' min':Math.floor(m/60)+':'+String(m%60).padStart(2,'0')):'Race day';
+const ZN={rec:'Recovery',z2:'Endurance',race:'Ironman intensity',nt:'Sub-threshold',thr:'Threshold',fast:'Fast and relaxed',drill:'Technique'};
+const BIKE={rec:[40,55],z2:[56,72],race:[68,75],nt:[80,90],thr:[95,100]},RUN={rec:[1.36,1.5],z2:[1.2,1.32],race:[1.12,1.17],nt:[1.03,1.08],thr:[.98,1.01]},SWIM={rec:[12,18],z2:[6,10],race:[3,6],nt:[1,3],thr:[-1,2],fast:[-8,-4]};
+const RD={rec:'Very easy jog',z2:'Conversational',race:'Ironman run pace',nt:'Comfortably hard',thr:'About one-hour race pace',fast:'Quick, relaxed'};
+let N={ftp:0,tp:0,css:0};try{N=Object.assign(N,JSON.parse(localStorage.getItem('nums')||'{}'))}catch(e){}
+const ps=t=>{const m=/^(\d+):(\d\d)$/.exec((t||'').trim());return m?+m[1]*60+ +m[2]:0},pf=s=>Math.floor(s/60)+':'+String(Math.round(s%60)).padStart(2,'0');
+function tgt(sp,z){if(!z||z==='drill')return'';
+if(sp==='bike'&&BIKE[z]){const[a,b]=BIKE[z];return N.ftp?Math.round(N.ftp*a/100)+'–'+Math.round(N.ftp*b/100)+' W':a+'–'+b+'% FTP'}
+if(sp==='run'&&RUN[z]){const[a,b]=RUN[z];return N.tp?pf(N.tp*a)+'–'+pf(N.tp*b)+' /km':RD[z]}
+if(sp==='swim'&&SWIM[z]){const[a,b]=SWIM[z];return N.css?pf(N.css+a)+'–'+pf(N.css+b)+' /100 m':'CSS '+(a>=0?'+':'')+a+' to '+(b>=0?'+':'')+b+' s'}return z==='fast'?RD.fast:''}
+/* phases */
+const PH=[{n:'Phase 1: Base',l:'Base',f:1,t:14,w:'Technique and aerobic base. Swim leads: three weekly swims build technique and distance. Bike and run volume grow slowly, nearly all below LT1, with strides and light strength work. Session lengths build gradually over the first 12 weeks, from about 30 minutes for runs and swims and 90 minutes for the long ride. Brick runs start in week 3.'},
+{n:'Phase 2: Build',l:'Build',f:15,t:28,w:'Strength-endurance and sub-threshold. Two controlled threshold sessions a week, with power and pace ceilings in place of lactate. Heavy lifting. Long rides add Ironman-effort blocks.'},
+{n:'Phase 3: Specific',l:'Specific',f:29,t:42,w:'Race-specific. Long days rehearse Ironman power, fuelling and running on tired legs. Lifting drops to maintenance.'},
+{n:'Phase 4: Peak',l:'Peak',f:43,t:45,w:'The biggest weeks and the dress rehearsal. A London Olympic-distance race, if confirmed, would sit in this block.'},
+{n:'Taper and race',l:'Taper',f:46,t:48,w:'Volume drops by a quarter, then by half. Short, sharp race-pace pieces stay in.'}];
+const phase=w=>PH.find(p=>w>=p.f&&w<=p.t),rec=w=>w%4===0&&w<=42;
+const typ=w=>w===48?'Race week':w>=46?'Taper':rec(w)?'Recovery week':'Load week';
+const WNOTE={1:'Short sessions to start. Lengths build week by week over the first 12 weeks.',3:'First brick: a short easy run straight off Saturday\'s ride.',43:'Possible window for the London Olympic-distance race. Send me the date and I will rework weeks 42–44.',44:'Race simulation on Saturday: long ride with race blocks, then a run.',45:'Dress rehearsal on Saturday: the last big session before the taper.',48:'Race week. Lifting slots drop to mobility only. Set out transition bags on Saturday.'};
+function target(w){let h=w<=14?10+2*(w-1)/13:w<=28?12+1.5*(w-15)/13:w<=42?13.5+.5*(w-29)/13:w<=44?14:w===45?12:w===46?10:7;return rec(w)?h*.7:h}
+/* sessions */
+const W=d=>['Warm-up',d,'rec'],C=d=>['Cool-down',d,'rec'];
+const S=(sp,t,min,z,steps,o)=>Object.assign({sp,t,min,z,steps,key:0,pu:'',notes:[]},o||{});
+const L={start:{A:['Strength: first steps',20,[['Squat','Goblet squat or chair squat 2 × 8'],['Push','Incline or knee push-up 2 × 8'],['Pull','One-arm dumbbell row 2 × 8 each arm'],['Trunk','Dead bug 2 × 6 each side']]],B:['Strength: first steps B',20,[['Single leg','Step-up to a low step 2 × 6 each leg'],['Glutes','Glute bridge 2 × 10'],['Trunk','Side plank, knees down, 2 × 20 s each side']]],C:['Mobility and prehab',15,[['Lower leg','Calf raises 2 × 12'],['Hips','Hip airplanes, 90/90 switches'],['Shoulders','Band external rotation 2 × 12']]]},base:{A:['Strength A: foundation',45,[['Squat','Goblet squat 3 × 10'],['Hinge','Romanian deadlift 3 × 10'],['Single leg','Split squat 2 × 8 each leg'],['Push','Push-up 3 × 10–15'],['Pull','One-arm row 3 × 10 each arm'],['Trunk','Dead bug 3 × 8 each side']]],B:['Strength B: foundation',40,[['Single leg','Step-up 3 × 8 each leg'],['Hinge','Single-leg RDL 3 × 8 each leg'],['Glutes','Hip thrust 3 × 12'],['Pull','Lat pulldown 3 × 10'],['Trunk','Side plank 3 × 30 s each side']]],C:['Prehab and mobility',30,[['Lower leg','Calf raises 3 × 15, tibialis raises 2 × 15'],['Shoulders','Band external rotation and pull-aparts 2 × 15'],['Hips','Hip airplanes, 90/90 switches']]]},
+build:{A:['Strength A: heavy',50,[['Main lift','Squat or trap-bar deadlift 4 × 4–6 at RPE 8'],['Single leg','Bulgarian split squat 3 × 6 each leg'],['Pull','Pull-up 4 × 5–8'],['Trunk','Pallof press 3 × 10 each side']]],B:['Strength B: heavy',45,[['Main lift','Deadlift 3 × 4–5 at RPE 8'],['Single leg','Heavy step-up 3 × 6 each leg'],['Press','Dumbbell press 3 × 6–8'],['Trunk','Side plank 3 × 30 s each side']]],C:['Prehab and plyos',30,[['Plyo','Pogo hops 3 × 20'],['Lower leg','Calf and tibialis raises 2 × 15'],['Shoulders','Band external rotation 2 × 15']]]},
+spec:{A:['Strength A: maintenance',30,[['Main lift','Squat 2 × 4 at RPE 7'],['Single leg','Single-leg RDL 2 × 6'],['Pull','Pull-up 2 × 6']]],B:['Strength B: maintenance',30,[['Main lift','Trap-bar deadlift 2 × 4 at RPE 7'],['Single leg','Step-up 2 × 6'],['Plyo','Pogo hops 2 × 20']]],C:['Mobility',20,[['Lower leg','Calf raises 2 × 15'],['Hips','Hip airplanes, 90/90 switches'],['Shoulders','Band external rotation 2 × 15']]]}};
+const lift=(k,s)=>{const[t,min,st]=L[k][s];return S('lift',t,min,null,st,{pu:'Reserved slot. If you run your own programme, keep it and match this phase.',notes:['Straight after the swim on Fridays and Mondays where possible, so it is one trip.']})};
+const easyRun=(m,str)=>S('run','Easy run'+(str?' with strides':''),m,'z2',[['Run',m+' min easy','z2'],...(str?[['Strides','4 × 20 s quick and relaxed, walk back','fast']]:[])],{pu:'Easy running keeps the run engine ticking at low cost.'});
+const J=[1,1,2,2,3,3,4,5,6,8,10,12],rw=w=>'Alternate '+J[w-1]+' min easy jog and '+(w<=6?2:1)+' min walk, and repeat for the whole session';
+const rwS=(t,min,o)=>S('run',t,min,'z2',m=>[['Run',fmt(m)+' easy jog. Take walk breaks whenever you need them and aim to jog a little more each week','z2'],['Pace','Slow enough to chat in full sentences','z2']],o);
+const FROM=[[1],[1,1],[1,1],[1,1],[1,1],[1],[1]];
+const T={
+start:[[S('swim','Water confidence + technique',30,'z2',[W('100 m easy, any stroke'),['Drill','8 × 25 m drill or short lengths, rest as long as you need','drill'],['Main','6 × 50 m easy, 30 s rest','z2'],C('100 m easy')],{pu:'Technique first. Stopping to rest is fine. A few lessons with a swim coach now will pay back all year.'})],
+[S('bike','Easy ride',45,'z2',[['Ride','Flat and comfortable, conversational effort','z2']],{pu:'Learn to ride relaxed and enjoy it.'}),lift('start','A')],
+[S('swim','Technique + short swims',30,'z2',[W('100 m easy'),['Main','6 × 50 m easy, 30 s rest','z2'],C('100 m easy')]),rwS('Easy run',25,{pu:'Easy and relaxed. Consistency beats speed.'})],
+[rwS('Easy run',30),lift('start','B')],
+[S('swim','Technique + short swims',30,'z2',[W('100 m easy'),['Main','6 × 75 m easy, 30 s rest','z2'],C('100 m easy')]),lift('start','C')],
+[S('bike','Long easy ride',90,'z2',m=>[['Ride',fmt(m)+' flat, easy and comfortable','z2'],['Fuelling','Water, and a snack if over an hour','']],{key:1,pu:'Time in the saddle builds comfort and strength.'})],
+[rwS('Long run',30,{key:1,pu:'Your longest session of the week. Keep it easy.'})]],
+base:[[S('swim','Technique + aerobic',55,'z2',[W('400 m easy'),['Drill','6 × 50 m drill, 15 s rest','drill'],['Main','8 × 100 m steady, 15 s rest','z2'],['Kick','4 × 50 m, 15 s rest','z2'],C('200 m easy')],{pu:'Technique first: one focus per week.'})],
+[S('bike','Aerobic cadence ride',75,'z2',[W('10 min easy'),['Main','5 × 5 min at 95–105 rpm, 3 min easy between','z2'],['Endurance','Remaining time steady','z2']]),lift('base','A')],
+[S('swim','Aerobic endurance',55,'z2',[W('300 m easy'),['Main','3 × 400 m steady, 30 s rest','z2'],['Build','6 × 50 m building, 15 s rest','z2'],C('200 m easy')]),easyRun(40,1)],
+[S('run','Aerobic run + strides',60,'z2',[['Run','Steady Z2 for the session','z2'],['Strides','6 × 20 s relaxed','fast']]),lift('base','B')],
+[S('swim','Pull + feel for the water',50,'z2',[W('300 m easy'),['Main','10 × 100 m pull, 10 s rest','z2'],['Drill','4 × 50 m sculling or fist','drill'],C('200 m easy')]),lift('base','C')],
+[S('bike','Long ride',150,'z2',m=>[['Ride',fmt(m)+' endurance, flat to rolling','z2'],['Fuelling','60–80 g carbohydrate per hour','']],{key:1,pu:'Time on the bike is the adaptation. Practise race fuelling from the start.'})],
+[S('run','Long run',75,'z2',m=>[['Run',fmt(m)+' easy, even effort','z2'],['Fuelling','A gel after 60 min','']],{key:1,pu:'Aerobic durability. It should feel too easy.'})]],
+build:[[S('swim','CSS set',60,'thr',[W('400 m easy'),['Main','5 × 200 m at CSS, 20 s rest','thr'],['Steady','4 × 100 m, 15 s rest','z2'],C('200 m easy')],{key:1,pu:'Your swim threshold session.'})],
+[S('bike','Sweet spot',90,'nt',[W('15 min building'),['Main','3 × 12 min, 5 min easy between','nt'],['Endurance','Remaining time steady','z2'],C('10 min easy')],{key:1,pu:'Controlled work between the two thresholds. A ceiling, not a target to beat.'}),lift('build','A')],
+[S('swim','Race-pace repeats',60,'race',[W('400 m easy'),['Main','10 × 100 m at Ironman swim pace, 15 s rest','race'],C('200 m easy')],{key:1}),easyRun(45)],
+[S('run','Threshold run',65,'nt',[W('15 min easy + 4 strides'),['Main','3 × 10 min sub-threshold, 2 min jog between','nt'],C('10 min easy')],{key:1,pu:'Norwegian-style: repeatable, short rests, a hard ceiling.'}),lift('build','B')],
+[S('swim','Aerobic pull + sharpeners',55,'z2',[W('300 m easy'),['Main','6 × 200 m pull steady, 20 s rest','z2'],['Speed','4 × 50 m fast, 20 s rest','fast'],C('200 m easy')]),lift('build','C')],
+[S('bike','Long ride with blocks',210,'z2',m=>[['Ride',fmt(m)+' total, Z2 base','z2'],['Blocks','2 × 30 min at Ironman effort, 10 min easy between','race'],['Fuelling','80 g carbohydrate per hour','']],{key:1,pu:'Race-intensity blocks inside a long ride.'})],
+[S('run','Long run',90,'z2',m=>[['Run',fmt(m)+' easy, last 20 min steady','z2'],['Fuelling','About 30 g carbohydrate every 40 min after the first hour','']],{key:1})]],
+spec:[[S('swim','Open-water style',60,'race',[W('300 m easy'),['Main','3 × 800 m steady, sighting every 8–10 strokes, 30 s rest','race'],C('200 m easy')],{pu:'Add wetsuit and open-water swims when the water allows.'})],
+[S('bike','Race-effort intervals',100,'race',[W('15 min building'),['Main','3 × 20 min at Ironman power in the aero position, 5 min easy between','race'],C('Remaining time easy')],{key:1,pu:'Locks in the exact power you will hold on race day.'}),lift('spec','A')],
+[S('swim','Race-pace repeats',60,'race',[W('400 m easy'),['Main','12 × 100 m at Ironman swim pace, 10 s rest','race'],C('200 m easy')],{key:1}),easyRun(45)],
+[S('run','Threshold + steady',70,'nt',[W('15 min easy + 4 strides'),['Main','4 × 8 min sub-threshold, 2 min jog between','nt'],['Finish','10 min at Ironman run effort','race'],C('10 min easy')],{key:1}),lift('spec','B')],
+[S('swim','Aerobic swim',55,'z2',[W('300 m easy'),['Main','5 × 300 m steady, 20 s rest','z2'],['Speed','4 × 50 m fast','fast'],C('200 m easy')]),lift('spec','C')],
+[S('bike','Race-simulation ride',270,'race',m=>[['Ride',fmt(m)+' total, Z2 base','z2'],['Blocks','3 × 45 min at Ironman power, 10 min easy between','race'],['Fuelling','80–90 g carbohydrate per hour, same products as race day','']],{key:1,pu:'The key session of the block. Fuelling is part of the training.'})],
+[S('run','Long run on tired legs',100,'z2',m=>[['Run',fmt(m)+' total, start easy','z2'],['Finish','Last 30 min at Ironman run effort','race'],['Fuelling','Practise your aid-station routine','']],{key:1})]]};
+const RW=[[S('swim','Easy swim',30,'rec',[['Session','200 m warm-up, 4 × 100 m steady, 4 × 25 m fast with full rest','z2']])],[S('bike','Openers',45,'z2',[['Session','Easy spin with 4 × 1 min at race effort, 2 min easy between. Check the bike over.','race']])],[S('swim','Short swim',25,'rec',[['Session','Easy with a few short pickups; practise sighting','z2']]),S('run','Easy run + strides',25,'z2',[['Session','Easy, then 4 × 20 s strides','fast']])],[S('bike','Short spin',30,'rec',[['Session','Very easy. Travel and check in.','rec']])],[S('swim','Open-water loosener',20,'rec',[['Session','Easy 15–20 min if you can','rec']]),liftMob()],[S('bike','Bike check-in',20,'rec',[['Session','Easy spin, then rack the bike and set out transition bags','rec']])],[S('race','Ironman Knokke-Heist',0,null,[['Race','Start easy, fuel early, let the first hours of the bike feel too easy','']],{pu:'Goal: under 15 hours.'})]];
+function liftMob(){return S('lift','Mobility only',20,null,[['Session','Hips, ankles, shoulders. Nothing loaded.','']])}
+const TOT=a=>a.filter(s=>s.sp!=='lift'&&s.sp!=='race').reduce((x,s)=>x+s.min,0);
+const RAMP=12,ST=[[30],[45,30],[30,25],[30,30],[30,20],[90],[30]];
+const brick=w=>{if(w<3||w>47)return 0;if(w>=46)return w===46?15:10;let m=w<=14?10+5*(w-3)/11:w<=28?15+5*(w-15)/13:w<=42?20+10*(w-29)/13:30;if(rec(w))m=10;return Math.round(m/5)*5};
+const RN={swim:'Early weeks: do as much of this set as fits in the time and rest whenever you need to.',run:'Early weeks: walk breaks are fine whenever you need them.',lift:'Early weeks: keep the weights light and do as many exercises as fit in the time, in order.'};
+function week(w){if(w===48)return RW.map(d=>d.map(s=>Object.assign({},s)));const p=w<=14?'base':w<=28?'build':'spec',t=T[p];
+const bm=brick(w),tot=t.flat().filter(s=>s.sp!=='lift').reduce((a,s)=>a+s.min,0),r=rec(w),k=(target(w)*60-bm)/tot;
+const out=t.map((d,i)=>d.map((s,j)=>{s=Object.assign({},s);const a=p==='base'&&w<RAMP?ST[i][j]:0;
+if(s.sp!=='lift')s.min=Math.max(20,Math.round(s.min*k/5)*5);
+if(a){s.min=Math.round((a+(s.min-a)*(w-1)/(RAMP-1))/5)*5;if(RN[s.sp])s.pu=RN[s.sp]+' '+s.pu}
+if(typeof s.steps==='function')s.steps=s.steps(s.min,w);
+if(r&&s.key){s.t+=' (easy)';s.z='z2';s.steps=[['Session','Easy steady effort, no intervals','z2']];s.pu='Recovery week: no intervals.'}
+if(w>=46&&s.key&&s.sp!=='lift')s.pu='Taper: keep the quality short and sharp. '+s.pu;return s}));
+if(bm){const hard=w>=29&&bm>=20;out[5].push(S('run','Brick run',bm,'z2',[['Transition','Rack the bike and change shoes in under 2 minutes',''],...(hard?[['Run',(bm-10)+' min easy','z2'],['Finish','Last 10 min at Ironman run effort','race']]:[['Run',bm+' min easy. Legs feel heavy for the first 5 minutes; walk breaks are fine','z2']])],{pu:'Straight off the bike. Teaches your legs to run when they are tired.'}))}
+return out}
+/* state */
+let cw=1,cd=0,open={},done={};try{done=JSON.parse(localStorage.getItem('done')||'{}')}catch(e){}
+const now=new Date(),rel=Math.floor((now-new Date(START[0],START[1],START[2]))/864e5),curW=Math.min(48,Math.max(1,Math.floor(rel/7)+1));
+cw=curW;cd=rel>=0&&rel<336?rel%7:0;
+const $=id=>document.getElementById(id),ws=$('ws');
+for(let w=1;w<=48;w++)ws.add(new Option('Week '+w+' ('+fd(dateOf(w,0))+') '+phase(w).l,w));
+const AGG={};for(let w=1;w<=48;w++){const d=week(w),h={swim:0,bike:0,run:0};d.flat().forEach(s=>{if(h[s.sp]!==undefined)h[s.sp]+=s.min/60});AGG[w]=h}
+function prof(){let s='',x=0;PH.forEach((p,i)=>{const a=(p.f-1)*20,b=(p.t-p.f+1)*20;s+='<rect x="'+a+'" y="0" width="'+b+'" height="26" fill="var(--b'+(i%2+1)+')"/><text x="'+(a+4)+'" y="17" fill="var(--ink)" font-size="11" font-weight="600">'+p.l+'</text>'});
+[4,8,12,16].forEach(g=>{const y=200-g*10.7;s+='<line x1="0" x2="960" y1="'+y+'" y2="'+y+'" stroke="var(--rule)"/><text x="2" y="'+(y-2)+'" fill="var(--muted)" font-size="10">'+g+' h</text>'});
+for(let w=1;w<=48;w++){let y=200;['swim','bike','run'].forEach(k=>{const h=AGG[w][k]*10.7;y-=h;s+='<rect x="'+((w-1)*20+3)+'" y="'+y+'" width="14" height="'+h+'" fill="var(--'+k+')"/>'});
+s+='<rect class="hit'+(w===cw?' sel':'')+'" data-w="'+w+'" x="'+((w-1)*20)+'" y="28" width="20" height="176"><title>Week '+w+'</title></rect>'}
+[1,13,26,39,48].forEach(w=>{s+='<text x="'+((w-1)*20+10)+'" y="216" fill="var(--muted)" font-size="11" text-anchor="middle">'+fd(dateOf(w,0))+'</text>'});$('prof').innerHTML=s}
+const dline=(d)=>d.reduce((a,s)=>a+s.min,0);
+function render(){ws.value=cw;const d=week(cw),p=phase(cw),h=AGG[cw],tot=h.swim+h.bike+h.run,r=rec(cw);
+$('wh').innerHTML='<div><h2>Week '+cw+'<span class="dates">'+fd(dateOf(cw,0))+' – '+fd(dateOf(cw,6))+'</span></h2><p class="pl">'+p.n+'<span class="pill">'+typ(cw)+'</span></p></div><div class="tot"><div><div class="l k" style="--c:var(--swim)">Swim</div><div class="v">'+h.swim.toFixed(1)+' h</div></div><div><div class="l k" style="--c:var(--bike)">Bike</div><div class="v">'+h.bike.toFixed(1)+' h</div></div><div><div class="l k" style="--c:var(--run)">Run</div><div class="v">'+h.run.toFixed(1)+' h</div></div><div><div class="l">Total</div><div class="v">'+tot.toFixed(1)+' h</div></div></div><p class="why">'+p.w+(r?' Recovery week: about 30% less volume and no intervals. Re-test FTP, run threshold and CSS, then update Your numbers.':'')+'</p>'+(WNOTE[cw]?'<p class="wn">'+WNOTE[cw]+'</p>':'');
+$('days').innerHTML=d.map((ss,i)=>{const dt=dateOf(cw,i),td=cw===curW&&i===(rel%7)&&rel>=0&&rel<336;return '<button class="db" role="tab" data-d="'+i+'" aria-selected="'+(i===cd)+'"><span class="dn">'+DN[i]+'</span><span class="dd">'+fd(dt)+'</span>'+(td?'<span class="tt">Today</span>':'')+'<span class="mini">'+ss.map(s=>'<span style="--c:var(--'+(s.sp==='race'?'race':s.sp)+');width:'+Math.max(12,Math.min(100,s.min/2.7))+'%"></span>').join('')+'</span><span class="dt">'+(ss.length?'<b>'+fmt(dline(ss))+'</b>':'Rest')+'</span></button>'}).join('');
+const day=d[cd];$('dt').textContent=fdl(dateOf(cw,cd));$('ds').textContent=day.length?day.map(s=>s.t).join(', ')+' · '+fmt(dline(day)):'Rest day';
+$('ss').innerHTML=day.length?day.map((s,j)=>{const k=cw+'-'+cd+'-'+j,o=open[k],dn=done[k];
+return '<div class="sess sport-'+s.sp+(dn?' done':'')+'"><div class="sh"><div class="sc"><input type="checkbox" data-k="'+k+'" aria-label="Done"'+(dn?' checked':'')+'></div><button class="st" data-o="'+k+'" aria-expanded="'+!!o+'"><div><div class="stt">'+s.t+'</div><div class="sm">'+(s.sp==='lift'?'Lifting':s.sp[0].toUpperCase()+s.sp.slice(1))+(s.z&&ZN[s.z]?' · '+ZN[s.z]:'')+(s.key?' · Key session':'')+'</div></div><div class="sd">'+fmt(s.min)+'</div></button></div>'+(o?'<div class="sb">'+(s.pu?'<p class="pu">'+s.pu+'</p>':'')+'<div class="steps"><div class="h">Part</div><div class="h">Detail</div><div class="h tg">Target</div>'+s.steps.map(t=>'<div class="p">'+t[0]+'</div><div>'+t[1]+'</div><div class="tg"><div class="tz">'+(ZN[t[2]]||'')+'</div><div class="tv">'+tgt(s.sp,t[2])+'</div></div>').join('')+'</div>'+(s.notes.length?'<ul class="notes">'+s.notes.map(n=>'<li>'+n+'</li>').join('')+'</ul>':'')+'</div>':'')+'</div>'}).join(''):'<p class="sum" style="margin-top:14px">Rest. Sleep, eat well and leave the legs alone.</p>';
+prof()}
+function zt(){$('zt').innerHTML='<tr><th>Zone</th><th>Bike</th><th>Run</th><th>Swim</th></tr>'+['rec','z2','race','nt','thr'].map(z=>'<tr><td>'+ZN[z]+'</td><td>'+tgt('bike',z)+'</td><td>'+tgt('run',z)+'</td><td>'+tgt('swim',z)+'</td></tr>').join('')}
+const go=(w,d)=>{cw=Math.min(48,Math.max(1,w));if(d!==undefined)cd=d;render()};
+document.addEventListener('click',e=>{const t=e.target,b=t.closest('[data-w]'),db=t.closest('[data-d]'),o=t.closest('[data-o]');
+if(b)go(+b.dataset.w);else if(db){cd=+db.dataset.d;render()}else if(o){open[o.dataset.o]=!open[o.dataset.o];render()}
+const tb=t.closest('[data-t]');if(tb){document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===tb));['plan','num','race','meth'].forEach(n=>$('v-'+n).hidden=n!==tb.dataset.t)}});
+document.addEventListener('change',e=>{const c=e.target;if(c.dataset.k){done[c.dataset.k]=c.checked;try{localStorage.setItem('done',JSON.stringify(done))}catch(x){}save();render()}});
+ws.onchange=()=>go(+ws.value);$('pw').onclick=()=>go(cw-1);$('nw').onclick=()=>go(cw+1);$('tb').onclick=()=>go(curW,rel>=0&&rel<336?rel%7:0);
+$('pd').onclick=()=>{if(cd>0)go(cw,cd-1);else if(cw>1)go(cw-1,6)};$('nd').onclick=()=>{if(cd<6)go(cw,cd+1);else if(cw<48)go(cw+1,0)};
+$('ea').onclick=()=>{const day=week(cw)[cd],all=day.every((s,j)=>open[cw+'-'+cd+'-'+j]);day.forEach((s,j)=>open[cw+'-'+cd+'-'+j]=!all);$('ea').textContent=all?'Expand all':'Collapse all';render()};
+['ftp','tp','css'].forEach(k=>{const i=$(k);if(N[k])i.value=k==='ftp'?N[k]:pf(N[k]);i.oninput=()=>{N[k]=k==='ftp'?+i.value||0:ps(i.value);try{localStorage.setItem('nums',JSON.stringify(N))}catch(x){}save();zt();render()}});
+const dl=Math.ceil((new Date(2027,8,5)-now)/864e5);$('cd').textContent=dl>0?dl+' days to race day.':'Race day.';
+zt();render();
+let save=()=>{};
+(async()=>{try{const[db,user]=await Promise.all([claude.use('db'),claude.use('user')]);if(!db||!user)return;
+const id=await user.id(),ref=db.collection('data/users/'+id).doc('plan');let first=true;
+const apply=()=>{['ftp','tp','css'].forEach(k=>{$(k).value=N[k]?(k==='ftp'?N[k]:pf(N[k])):''});zt();render()};
+ref.onSnapshot(s=>{if(s.metadata.hasPendingWrites)return;const d=s.exists?s.data():{};
+if(first){first=false;done=Object.assign({},done,d.done||{});N=Object.assign(N,d.nums||{});apply();ref.set({done,nums:N}).catch(()=>{});
+save=()=>{ref.set({done,nums:N}).catch(()=>{})};return}
+if(d.done)done=d.done;if(d.nums)N=Object.assign(N,d.nums);apply()},()=>{})}catch(e){}})();
+</script></body></html>
